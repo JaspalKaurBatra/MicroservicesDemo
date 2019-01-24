@@ -7,15 +7,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-
-		<groupId>org.springframework.boot</groupId>
-
-		<artifactId>spring-boot-starter-parent</artifactId>
-
-		<version>2.1.2.RELEASE</version>
-
+           <groupId>com.stackroute</groupId>
+	   <artifactId>parent-pom</artifactId>
+	   <version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
-
 	</parent>
 
 	<groupId>com.stackroute</groupId>
@@ -42,22 +37,7 @@
 
 	<dependencies>
 
-		<dependency>
-
-			<groupId>org.springframework.boot</groupId>
-
-			<artifactId>spring-boot-starter-web</artifactId>
-
-		</dependency>
-
-		<!--<dependency>-->
-
-		<!--<groupId>org.springframework.cloud</groupId>-->
-
-		<!--<artifactId>spring-cloud-starter-config</artifactId>-->
-
-		<!--</dependency>-->
-
+		
 		<dependency>
 
 		<groupId>org.springframework.cloud</groupId>
@@ -86,17 +66,7 @@
 
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-actuator -->
-
-		<dependency>
-
-			<groupId>org.springframework.boot</groupId>
-
-			<artifactId>spring-boot-starter-actuator</artifactId>
-
-			<!--<version>2.1.2.RELEASE</version>-->
-
-		</dependency>
+		
 
 		<dependency>
 
