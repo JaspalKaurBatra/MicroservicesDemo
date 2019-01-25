@@ -2,7 +2,8 @@ version: '3'
 services:
   mongodb:
     image: mongo:3.4-jessie
-    container_name: "mongodb"
+    container_name: mongodb
+    hostname: localhost
     network_mode: host
     ports:
       - "27017:27017"
@@ -13,6 +14,7 @@ services:
     build: ./eureka-service
     restart: always
     network_mode: host
+    hostname: localhost
     container_name: eureka
     ports:
       - "9091:9091"
@@ -39,17 +41,21 @@ services:
     expose:
       - 8888
 
-#  track-service:
-#    build: ./track-service
-#    restart:  always
-#    container_name: track
-#    depends_on:
-#      - mongodb
-#    ports:
-#      - 8082:8082
-#    expose:
-#      - 8082
-#
+  track-service:
+    build: ./track-service
+    restart:  always
+    network_mode: host
+    hostname: localhost
+    container_name: track
+    depends_on:
+      - config-server
+      - eureka-service
+    ports:
+      - "8999:8999"
+    expose:
+      - 8999
+
+
 #  user-service:
 #    build: ./user-service
 #    restart: always
