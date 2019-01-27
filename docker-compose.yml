@@ -38,8 +38,8 @@ services:
     hostname: localhost
     container_name: track
     depends_on:
-      - config-server
       - eureka-service
+      - config-server
       - mongodb
     ports:
       - "8090:8090"
@@ -57,10 +57,20 @@ services:
 #    expose:
 #      - 8089
 #
-#  zuul-service:
-#    build: ./zuul-service
-#    container_name: zuul
-#    ports:
-#      - 8082:8082
-#    expose:
-#      - 8082
+  zuul-service:
+    build: ./zuul-service
+    container_name: zuul
+    restart:  always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+     - track-service
+    ports:
+     - "8082:8082"
+    expose:
+     - 8082
+
+
+
+
+#       network_mode is imp for socket connection
