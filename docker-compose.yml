@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   mongodb:
     image: mongo:3.4-jessie
@@ -21,18 +21,8 @@ services:
     expose:
       - 9091
 
-#  config-service:
-#    build: ./spring-config-server
-#    restart:  always
-#    depends_on:
-#      - mongodb
-#    container_name: config
-#    ports:
-#      - "8888:8888"
-#    expose:
-#      - 8888
   config-server:
-    build: ./spring-config-server
+    build: ./config-server-service
     restart: always
     network_mode: host
     container_name: config
@@ -50,11 +40,11 @@ services:
     depends_on:
       - config-server
       - eureka-service
+      - mongodb
     ports:
-      - "8999:8999"
+      - "8090:8090"
     expose:
-      - 8999
-
+      - 8090
 
 #  user-service:
 #    build: ./user-service

@@ -6,17 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server-service" />
         <module name="eureka-service" />
-        <module name="spring-config-server" />
         <module name="track-service" />
         <module name="user-service" />
         <module name="zuul-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="config-server-service" target="11" />
       <module name="eureka-service" target="11" />
       <module name="parent-pom" target="11" />
-      <module name="spring-config-server" target="11" />
       <module name="track-service" target="11" />
       <module name="user-service" target="11" />
       <module name="zuul-service" target="11" />
@@ -24,9 +24,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server-service" options="-parameters" />
       <module name="eureka-service" options="-parameters" />
       <module name="parent-pom" options="-parameters" />
-      <module name="spring-config-server" options="-parameters" />
       <module name="track-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
       <module name="zuul-service" options="-parameters" />
